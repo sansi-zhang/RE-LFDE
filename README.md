@@ -30,7 +30,9 @@ Lite-L3FNet: A Resource-Efficient Hardware Accelerator for Low-bit Light Field I
 A file containing a series of hardware for the L3FNe and ablation experimental groups.  
   - L3FNet  
     It contains the bit files and the hwh files for hardware, and the project code for PYNQ implementation.  
-  - Net_prune  
+  - Net_Lp  
+    Contains the bit files and the hwh files for hardware.
+  - Net_Op  
     Contains the bit files and the hwh files for hardware.  
   - Net_w2bit  
     Contains the bit files and the hwh files for hardware.  
@@ -55,15 +57,14 @@ Store network test results, pfm files and converted png files.
     - Net_Full  
     - Net_Quant  
   - Necessity analysis  
-    - Net_3D  
-    - Net_99  
-    - Net_Undpp  
+    - Net_None  
+    - Net_77  
+    - Net_DPP  
   - Performance improvement analysis
-    - Net_Unprune  
-    - Net_8bit  
+    - Net_Lp  
     - Net_w2bit  
     - Net_w8bit  
-    - Net_prune  
+    - Net_Op  
 
 ### Train
 
