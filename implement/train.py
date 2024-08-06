@@ -11,25 +11,13 @@ import matplotlib.pyplot as plt
 from model.model_Quant import Net_Quant
 from model.model_Quant_w8bit import Net_Quant_w8bit
 from model.model_Quant_w2bit import Net_Quant_w2bit
-from model.model_Quant_8bit import Net_Quant_8bit
-from model.model_Quant_NP import Net_Quant_NP
+from model.model_Quant_LP import Net_Quant_LP
+from model.model_Quant_OP import Net_Quant_OP
 
 from model.model_Full import Net_Full
-from model.model_Full_Lite import Net_Full_Lite
-from model.model_Full_final import Net_Full_final
-from model.model_Full2 import Net_Full2
-from model.model_Full_2 import Net_Full_2
-from model.model_Full_3 import Net_Full_3
-from model.model_Full_4 import Net_Full_4
-
-
-
 from model.model_None import Net_None
 from model.model_DPP import Net_DPP
 
-
-
-from model.model_Quant_Prune import Net_Quant_Prune
 
 
 class Train(object):
@@ -54,34 +42,19 @@ class Train(object):
             net = Net_Quant_w8bit(cfg)
         elif cfg.net == 'Net_Quant_w2bit':
             net = Net_Quant_w2bit(cfg)
-        elif cfg.net == 'Net_Quant_NP':
-            net = Net_Quant_NP(cfg)    
+        elif cfg.net == 'Net_Quant_LP':
+            net = Net_Quant_LP(cfg)    
+        elif cfg.net == 'Net_Quant_OP':
+            net = Net_Quant_OP(cfg)    
         
             
         elif cfg.net == 'Net_Full' or cfg.net == 'Full':
             net = Net_Full(cfg)
-        elif cfg.net == 'Net_Full2':
-            net = Net_Full2(cfg)
-        elif cfg.net == 'Net_Full_2':
-            net = Net_Full_2(cfg)
-        elif cfg.net == 'Net_Full_final':
-            net = Net_Full_final(cfg)
-        elif cfg.net == 'Net_Full_Lite':
-            net = Net_Full_Lite(cfg)
-        elif cfg.net == 'Net_Full_3':
-            net = Net_Full_3(cfg)
-        elif cfg.net == 'Net_Full_4':
-            net = Net_Full_4(cfg)
-
-            
-            
         elif cfg.net == 'Net_None':
             net = Net_None(cfg)
         elif cfg.net == 'Net_DPP':
             net = Net_DPP(cfg)
-    
-        elif cfg.net == 'Net_Quant_Prune':
-            net = Net_Quant_Prune(cfg)
+
     
         net.to(cfg.device)
         cudnn.benchmark = True
