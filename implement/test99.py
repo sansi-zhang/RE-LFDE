@@ -5,7 +5,7 @@ from torchvision.transforms import ToTensor
 
 
 from model.model_None import Net_None
-from model.model_DPP import Net_DPP
+
 
 
 
@@ -22,8 +22,6 @@ class Test(object):
         
         if cfg.net == 'Net_None':
             net = Net_None(cfg)
-        elif cfg.net == 'Net_DPP':
-            net = Net_DPP(cfg)
         
         net.to(cfg.device)
         
@@ -31,10 +29,7 @@ class Test(object):
         
         filename_para = cfg.net + '_lr' + str(cfg.lr) + '_n_steps' + str(cfg.n_steps)
         model_path = '../param/' + cfg.net +'/' + filename_para + '_' + str(cfg.n_epochs) + 'best_' + cfg.best +'.pth.tar'
-        # model_path = '../param/Net_Quant_8bit/Net_Quant_8bit_lr1e-05_n_steps200_1000best_loss.pth.tar'
-        
-        # model_path = '../param/'+ cfg.net +'/' + 'Net_Full_best_mse_268.pth.tar'
-        # model_path = '../param/'+ cfg.net +'/' + 'Net_Full_best_mse_264.pth.tar'
+
         
         print('param=', model_path)
       
