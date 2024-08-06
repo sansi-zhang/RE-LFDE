@@ -5,18 +5,12 @@ from torchvision.transforms import ToTensor
 
 
 from model.model_Quant import Net_Quant
-from model.model_Quant2 import Net_Quant2
-from model.model_Quant_8bit import Net_Quant_8bit
 from model.model_Quant_w8bit import Net_Quant_w8bit
 from model.model_Quant_w2bit import Net_Quant_w2bit
-from model.model_Quant_NP import Net_Quant_NP
-from model.model_Quant_Prune import Net_Quant_Prune
+from model.model_Quant_LP import Net_Quant_LP
+from model.model_Quant_OP import Net_Quant_OP
 
 from model.model_Full import Net_Full
-from model.model_Full_2 import Net_Full_2
-from model.model_Full_3 import Net_Full_3
-from model.model_Full_4 import Net_Full_4
-from model.model_Full_final import Net_Full_final
 
 from model.model_None import Net_None
 from model.model_DPP import Net_DPP
@@ -39,27 +33,14 @@ class Test(object):
         elif cfg.net == 'Net_Full' or cfg.net == 'Full':
             net = Net_Full(cfg)
         
-        elif cfg.net == 'Net_Quant_8bit':
-            net = Net_Quant_8bit(cfg)
         elif cfg.net == 'Net_Quant_w8bit':
             net = Net_Quant_w8bit(cfg)
         elif cfg.net == 'Net_Quant_w2bit':
             net = Net_Quant_w2bit(cfg)
-        elif cfg.net == 'Net_Quant_NP':
-            net = Net_Quant_NP(cfg)
-        elif cfg.net == 'Net_Quant_Prune':
-            net = Net_Quant_Prune(cfg)
-        
-        elif cfg.net == 'Net_Full_2':
-            net = Net_Full_2(cfg)
-        elif cfg.net == 'Net_Full_3':
-            net = Net_Full_3(cfg)
-        elif cfg.net == 'Net_Full_4':
-            net = Net_Full_4(cfg)
-            
-        elif cfg.net == 'Net_Full_final':
-            net = Net_Full_final(cfg)
-            
+        elif cfg.net == 'Net_Quant_LP':
+            net = Net_Quant_LP(cfg)
+        elif cfg.net == 'Net_Quant_OP':
+            net = Net_Quant_OP(cfg)
         elif cfg.net == 'Net_None':
             net = Net_None(cfg)
         elif cfg.net == 'Net_DPP':
@@ -71,15 +52,6 @@ class Test(object):
         
         filename_para = cfg.net + '_lr' + str(cfg.lr) + '_n_steps' + str(cfg.n_steps)
         model_path = '../param/' + cfg.net +'/' + filename_para + '_' + str(cfg.n_epochs) + 'best_' + cfg.best +'.pth.tar'
-        # model_path = '../param/' + cfg.net +'/' + filename_para + '_' + str(cfg.n_epochs) +'.pth.tar'
-        # model_path = '../param/Net_Quant_w8bit/others/Net_Quant_w8bit_lr5e-06_n_steps10_30_2.259.pth.tar'
-        # model_path = '../param/Net_Quant/Net_Quant_lr1e-05_n_steps1000_2000best_mse.pth.tar'
-        # model_path = '../param/Net_Quant_8bit/Net_Quant_8bit_lr1e-05_n_steps200_1000best_loss.pth.tar'
-        # model_path = '../param/Net_Quant_w8bit/Net_Quant_w8bit_lr4e-06_n_steps10_202.252318917271623.pth.tar'
-        # model_path = '../param/Net_Quant_w8bit/Net_Quant_w8bit_lr5e-06_n_steps10_302.1549553906879737.pth.tar'
-        # model_path = '../param/Net_Full_final/Net_Full_final_lr0.0008_n_steps1000_5000best_mse.pth.tar'
-        # model_path = '../param/'+ cfg.net +'/' + 'Net_Full_best_mse_268.pth.tar'
-        # model_path = '../param/'+ cfg.net +'/' + 'Net_Full_best_mse_264.pth.tar'
         
         print('param=', model_path)
       
