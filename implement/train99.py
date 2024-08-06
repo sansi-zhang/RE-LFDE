@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 
 from model.model_None import Net_None
-from model.model_DPP import Net_DPP
+
 
 
 
@@ -32,9 +32,7 @@ class Train(object):
 
         if cfg.net == 'Net_None':
             net = Net_None(cfg)
-        elif cfg.net == 'Net_DPP':
-            net = Net_DPP(cfg)
-    
+
     
         net.to(cfg.device)
         cudnn.benchmark = True
