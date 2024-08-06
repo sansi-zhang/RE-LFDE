@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument('--patchsize_test', type=int, default=48)
     parser.add_argument('--minibatch_test', type=int, default=32)
     parser.add_argument('--model_file', type=str, default='../param/')
-    parser.add_argument('--model_path', type=str, default='../param/Net_Full_4/Net_Full_4_lr0.0008_n_steps800_5000best_mse.pth.tar')
+    parser.add_argument('--model_path', type=str, default='../param/Net_Full/Net_Full_best_mse.pth.tar')
     parser.add_argument('--save_path', type=str, default='../Results/')  
     parser.add_argument('--parallel', type=bool, default=False)
     parser.add_argument('--num_workers', type=int, default=1)
