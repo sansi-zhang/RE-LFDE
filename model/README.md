@@ -7,9 +7,9 @@ It is the setting and combination of some quantitative means in Brevitas library
 ### Two benchmark networks
 
 - __model_Full.py__  
-  Full precision network: Lite-L3FNet(FP)
+  Full precision network: RE-LFDE(FP)
 - __model_Quant.py__  
-  Quantization network: Lite-L3FNet
+  Quantization network: RE-LFDE
 
 ### Six ablation implementation networks
 
