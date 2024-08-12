@@ -1,5 +1,5 @@
-# Lite-L3FNet
-Lite-L3FNet: A Resource-Efficient Hardware Accelerator for Low-bit Light Field Image Depth Estimation
+# RE-LFDE
+RE-LFDE: A Resource-Efficient Hardware Accelerator for Low-bit Light Field Image Depth Estimation
 
 <img src="./Figure/paper_picture/Lite-L3FNet.jpg" alt="Lite-L3FNet Network and Custom Data Flow" style="max-width: 60%;">
 
