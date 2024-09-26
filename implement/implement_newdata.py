@@ -16,7 +16,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--device', type=str, default='cuda:0')
     parser.add_argument("--angRes", type=int, default=7, help="angular resolution")
-    parser.add_argument('--model_name', type=str, default='../log/L3FNet')
+    parser.add_argument('--model_name', type=str, default='../log/RE-LFDE')
     # parser.add_argument('--testset_dir', type=str, default='../dataset/validation/')
     parser.add_argument('--testset_dir', type=str, default='../dataset/others/new_data/test/')
     parser.add_argument('--crop', type=bool, default=False)
