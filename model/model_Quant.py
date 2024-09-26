@@ -1,11 +1,3 @@
-##---------------------
-## 使用 Conv3_2d 来实现卷积操作
-## 继续使用 视差划分前置 的方式
-##---------------------
-
-
-
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
