@@ -21,7 +21,7 @@ class Train(object):
         
     def save_ckpt(state, save_path='./param/', subdirectory='', filename='checkpoint.pth.tar'):
         save_dir = os.path.join(save_path, subdirectory)
-        os.makedirs(save_dir, exist_ok=True)  # 创建子目录，如果不存在的话
+        os.makedirs(save_dir, exist_ok=True)  
         torch.save(state, os.path.join(save_dir, filename))
         
     def train(cfg):
