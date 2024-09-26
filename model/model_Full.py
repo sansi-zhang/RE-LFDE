@@ -1,9 +1,3 @@
-# #---------------------
-# # 全精度模型 Net_Full
-# # 将视差融入Batch维度
-# # 继续使用 视差划分前置 的方式
-# #---------------------
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
