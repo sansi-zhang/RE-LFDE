@@ -1,7 +1,7 @@
 # RE-LFDE
 RE-LFDE: A Resource-Efficient Hardware Accelerator for Low-bit Light Field Image Depth Estimation
 
-<img src="./Figure/paper_picture/Lite-L3FNet.jpg" alt="Lite-L3FNet Network and Custom Data Flow" style="max-width: 60%;">
+<img src="./Figure/paper_picture/RE-LFDE.jpg" alt="RE-LFDE Network" style="max-width: 60%;">
 
 ## Software Preparation
 
@@ -27,8 +27,8 @@ RE-LFDE: A Resource-Efficient Hardware Accelerator for Low-bit Light Field Image
   - hardware_picture  
   Hardware design picture.
 - ./Hardware  
-A file containing a series of hardware for the L3FNe and ablation experimental groups.  
-  - L3FNet  
+A file containing a series of hardware for the RE-LFDE and ablation experimental groups.  
+  - RE-LFDE  
     It contains the bit files and the hwh files for hardware, and the project code for PYNQ implementation.  
   - Net_Lp  
     Contains the bit files and the hwh files for hardware.
@@ -39,7 +39,7 @@ A file containing a series of hardware for the L3FNe and ablation experimental g
   - Net_w8bit  
     Contains the bit files and the hwh files for hardware.  
 - ./implement  
-L3FNet implementation files and data preprocessing file on Pytorch.
+RE-LFDE implementation files and data preprocessing file on Pytorch.
 - ./jupyter  
 Network execution scripts, as well as some algorithm implementation scripts.
 - ./log  
@@ -70,7 +70,7 @@ Store network test results, pfm files and converted png files.
 
 - Set the hyper-parameters in parse_args() if needed. We have provided our default settings in the realeased codes.
 - You can train the network by calling implement.py and giving the mode attribute to train.  
-    ``` python ../implement/implement.py --net Net_Full  --n_epochs 3000 --mode train --device cuda:1 ```
+    ``` python ./implement/implement.py --net Net_Full  --n_epochs 3000 --mode train --device cuda:0 ```
 
 - Checkpoint will be saved to ./param/'NetName'.
   
@@ -98,7 +98,7 @@ Store network test results, pfm files and converted png files.
 
 
 ### Hardware overall
-<img src='./Figure/paper_picture/hardwareoverall.jpg'  style="max-width: 50%;">
+<img src='./Figure/paper_picture/hardwareoverall2.jpg'  style="max-width: 50%;">
 
 ### Hardware Schematic Diagram
 See ```'./Figure/hardware_picture/top.pdf' ```
