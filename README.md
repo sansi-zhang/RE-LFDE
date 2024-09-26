@@ -100,11 +100,12 @@ Store network test results, pfm files and converted png files.
 ### Hardware overall
 <img src='./Figure/paper_picture/hardwareoverall2.jpg'  style="max-width: 50%;">
 
+<!-- ```
 ### Hardware Schematic Diagram
 See ```'./Figure/hardware_picture/top.pdf' ```
 
 ### Hardware Resource Consump
-
+``` -->
 
 # Citiation
 If you find this work helpful, please consider citing:  
