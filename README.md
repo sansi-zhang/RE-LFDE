@@ -15,64 +15,59 @@ RE-LFDE: A Resource-Efficient Hardware Accelerator for Low-bit Light Field Image
 - We used the HCI 4D LF benchmark for training and evaluation. Please refer to the [benchmark website](https://lightfield-analysis.uni-konstanz.de/) for details.
 
 ### Path structure
-
-- ./dataset  
-  - training  
-  Location of the training data.  
-  - validation  
-  Verify where the data is stored.
-- ./Figure  
-  - paper_picture  
-  Images from the paper.  
-  - hardware_picture  
-  Hardware design picture.
-- ./Hardware  
-A file containing a series of hardware for the RE-LFDE and ablation experimental groups.  
-  - RE-LFDE  
-    It contains the bit files and the hwh files for hardware, and the project code for PYNQ implementation.  
-  - Net_Lp  
-    Contains the bit files and the hwh files for hardware.
-  - Net_Op  
-    Contains the bit files and the hwh files for hardware.  
-  - Net_w2bit  
-    Contains the bit files and the hwh files for hardware.  
-  - Net_w8bit  
-    Contains the bit files and the hwh files for hardware.  
-- ./implement  
-RE-LFDE implementation files and data preprocessing file on Pytorch.
-- ./jupyter  
-Network execution scripts, as well as some algorithm implementation scripts.
-- ./log  
-Log files that record the accuracy of each verification scenario during verification.
-- ./loss  
-loss Drop image, recording the loss for each validation.
-- ./model  
-Network and regular functions to call.
-- ./param  
-The checkpoint of the networks is stored here.
-
-- ./Results  
-Store network test results, pfm files and converted png files.  
-  - our network  
-    - Net_Full  
-    - Net_Quant  
-  - Necessity analysis  
-    - Net_None  
-    - Net_77  
-    - Net_DPP  
-  - Performance improvement analysis
-    - Net_Lp  
-    - Net_w2bit  
-    - Net_w8bit  
-    - Net_Op  
-
+```
+.
+├── dataset
+│   ├── training                 # Location of the training data
+│   └── validation               # Location of the validation data
+│
+├── Figure
+│   ├── paper_picture            # Images used in the paper
+│   └── hardware_picture         # Hardware design images
+│
+├── Hardware
+│   ├── RE-LFDE                  # RE-LFDE hardware files and PYNQ project code
+│   │   ├── *.bit                # Bitstream files
+│   │   ├── *.hwh                # Hardware handoff files
+│   │   └── pynq_project         # PYNQ implementation project
+│   │
+│   ├── Net_Lp                   # Ablation experiment hardware files
+│   │
+│   ├── Net_Op
+│   │
+│   ├── Net_w2bit
+│   │
+│   └── Net_w8bit
+│
+├── implement                    # RE-LFDE implementation and preprocessing files (PyTorch)
+│
+├── model                        # Network definitions and utility functions
+│
+├── param                        # Network checkpoints
+│
+└── Results
+    ├── our_network
+    │   ├── Net_Full
+    │   └── Net_Quant
+    │
+    ├── Necessity_analysis
+    │   ├── Net_None
+    │   ├── Net_77
+    │   └── Net_DPP
+    │
+    └── Performance_improvement_analysis
+        ├── Net_Lp
+        ├── Net_w2bit
+        ├── Net_w8bit
+        └── Net_Op
+```
 ### Train
 
 - Set the hyper-parameters in parse_args() if needed. We have provided our default settings in the realeased codes.
 - You can train the network by calling implement.py and giving the mode attribute to train.  
     ``` python ./implement/implement.py --net Net_Full  --n_epochs 3000 --mode train --device cuda:0 ```
 
-- Checkpoint will be saved to ./param/'NetName'.
+- Checkpoint will be saved to ```./param/'NetName'```.
   
 ### Valition and Test
 
@@ -110,14 +105,25 @@ See ```'./Figure/hardware_picture/top.pdf' ```
 # Citiation
 If you find this work helpful, please consider citing:  
 Our paper is currently under submission
-<!-- ``` cite
-@Article{L3FNet,
-    author    = {Jie Li, Chuanlun Zhang, Wenxuan Yang, Heng Li, Xiaoyan Wang, Yiguang Liu},
-    title     = {FPGA-based Low-bit and Low-power Fast LF Image depth estimation},
-    journal   = {}, 
-    year      = {2023},   
+``` cite
+@Article{10.1145/3807499,
+author = {Li, Jie and Zhang, Chuanlun and Li, Heng and Du, Shuangli and Yang, Wenxuan and Wang, Xiaoyan and Liu, Yiguang},
+title = {RE-LFDE: A Resource-Efficient Hardware Accelerator for Low-Bit Light Field Image Depth Estimation},
+year = {2026},
+issue_date = {May 2026},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {25},
+number = {3},
+issn = {1539-9087},
+url = {https://doi.org/10.1145/3807499},
+doi = {10.1145/3807499},
+month = may,
+articleno = {43},
+numpages = {20},
+keywords = {Light field, depth estimation, FPGA, low-bit, lightweight}
 }
-``` -->
+```
 
 # Contact
 Welcome to raise issues or email to Chuanlun Zhang(specialzhangsan@gmail.com or zcl_20000718@163.com) for any question regarding this work
